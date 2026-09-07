@@ -59,31 +59,31 @@ The model can be used to examine:
 
 The magnetic field is represented as
 
-\[
+$$
 \mathbf{B}=\nabla\times\left(A\,\hat{\boldsymbol\phi}\right)
 +B_\phi\hat{\boldsymbol\phi}.
-\]
+$$
 
 The solver advances an axisymmetric mean-field dynamo system with the schematic form
 
-\[
+$$
 \frac{\partial A}{\partial t}
 =\mathcal{D}_A(A)-\mathcal{A}_A(A)+\alpha B_\phi,
-\]
+$$
 
-\[
+$$
 \frac{\partial B_\phi}{\partial t}
 =\mathcal{D}_B(B_\phi)-\mathcal{A}_B(B_\phi)
 +r\sin\theta\left(\mathbf{B}_p\cdot\nabla\right)\Omega,
-\]
+$$
 
-\[
+$$
 \frac{\partial\Omega}{\partial t}
 =\mathcal{T}_{\mathrm{visc}}
 +\mathcal{T}_{\Lambda}
 +\mathcal{T}_{\mathrm{circ}}
 +\mathcal{T}_{\mathrm{Lorentz}}.
-\]
+$$
 
 Here, `𝒟` denotes turbulent diffusion, `𝒜` represents transport by meridional
 circulation, and the final equation combines viscous transport, nondiffusive turbulent
