@@ -1,12 +1,12 @@
-# TachoDynamo
+# Soladyne
 
 ## A C++ simulation suite for 2D solar dynamo evolution and tachocline confinement
 
-TachoDynamo is an object-oriented scientific-computing project for simulating the
+Soladyne is an solar-dynamo MHD simulation package for simulating the
 coupled evolution of magnetic fields and differential rotation inside an axisymmetric
-solar convection-zone shell. Its main scientific goal is to explore how magnetic
-stresses, turbulent angular-momentum transport, meridional circulation, and spatially
-varying diffusivity influence the confinement and evolution of the solar tachocline.
+solar convection-zone shell. The legacy code is based on Surya fortran code developed in IIA, Bangalore.
+This package includes numerical calculations of angular-momentum transport, meridional circulation, and 
+spatially varying diffusivity and explores how it influence the confinement and evolution of the solar tachocline.
 
 The numerical solver is implemented in **C++17**. A **pybind11** interface exposes the
 simulation state as NumPy arrays, while a **Streamlit** application provides interactive
@@ -122,7 +122,7 @@ auditable. Python receives independent contiguous arrays with shape `(257, 257)`
 ## Repository structure
 
 ```text
-solar-dynamo-cpp/
+soladyne/
 ├── cpp/
 │   ├── include/solar_dynamo/model.hpp   # Public C++ simulation interface
 │   └── src/
@@ -173,7 +173,7 @@ C++** workload and ensure CMake is available from PowerShell.
 ### Create the environment
 
 ```bash
-git clone https://github.com/<your-username>/solar-dynamo-cpp.git
+git clone https://github.com/KishanDeka/soladyne.git
 cd solar-dynamo-cpp
 
 python -m venv .venv
@@ -379,8 +379,8 @@ native CMake build.
 ## Docker
 
 ```bash
-docker build -t tachodynamo .
-docker run --rm -p 8501:8501 tachodynamo
+docker build -t soladyne .
+docker run --rm -p 8501:8501 soladyne
 ```
 
 Open `http://localhost:8501` in a browser.
@@ -412,10 +412,10 @@ with Streamlit Community Cloud or another container-compatible service.
 
 ## Scope and limitations
 
-TachoDynamo is a research and educational simulation suite. Results depend on the chosen
+Soladyne is a solar MHD simulation package. The output results depend on the chosen
 transport coefficients, initial conditions, boundary assumptions, and dimensional
-scalings. Before using it for quantitative solar inference, perform convergence tests,
-compare multiple radial and temporal resolutions, and validate tachocline-thickness and
+scalings. Before using it for real observational inferences, compare multiple radial and 
+temporal resolutions, and validate tachocline-thickness and
 cycle-period measurements against suitable reference calculations or observations.
 
 ## Roadmap
@@ -428,15 +428,6 @@ cycle-period measurements against suitable reference calculations or observation
 - Parameter-scan workflows for confinement regimes.
 - Quantitative cycle-period and parity detection.
 - Reproducible benchmark datasets and performance reports.
-
-## Resume-ready summary
-
-> Developed an object-oriented C++17 simulation suite for coupled 2D solar-dynamo and
-> differential-rotation evolution, enabling numerical studies of magnetic tachocline
-> confinement through ADI integration, turbulent angular-momentum transport, meridional
-> circulation, and Lorentz-force feedback. Exposed the solver through pybind11 and NumPy,
-> built an interactive Streamlit experiment interface, and added automated C++/Python
-> testing, Docker packaging, animation tools, and multi-platform CI.
 
 ## License
 
